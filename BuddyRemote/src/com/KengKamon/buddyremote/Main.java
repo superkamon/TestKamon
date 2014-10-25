@@ -44,15 +44,14 @@ public class Main extends FragmentActivity implements TabListener {
 		// actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 		// Create Tab
-		// ActionBar actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-		actionBar.addTab(actionBar.newTab().setText("NUM") // เน€เธ�เธดเน�เธกเธฃเธฒเธขเธ�เธฒเธฃTab
-															// เน�NUM
+		actionBar.addTab(actionBar.newTab().setText("NUM") //create num tab
+															
 				.setTabListener(this));
 
-		actionBar.addTab(actionBar.newTab().setText("Pad") // เน€เธ�เธดเน�เธกเธฃเธฒเธขเธ�เธฒเธฃTab
-															// เน�NUM
+		actionBar.addTab(actionBar.newTab().setText("Pad") //create pad tap
+															
 				.setTabListener(this));
 
 		viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -60,7 +59,7 @@ public class Main extends FragmentActivity implements TabListener {
 			@Override
 			public void onPageSelected(int position) {
 				// on changing the page
-				// เธชเน�เธ�positionเธกเธฒเธ—เธตเน�ActionเธบBar
+				// keep position when you touch tab
 				actionBar.setSelectedNavigationItem(position);
 			}
 
@@ -98,9 +97,9 @@ public class Main extends FragmentActivity implements TabListener {
 	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
 
-		Log.d(TAG, "tab pos " + tab.getPosition()); // เน€เธญเธฒเน�เธงเน�เธ”เธนlogเธ•เธณเน�เธซเธ�เน�เธ�Tabเธ—เธตเน�เธ–เธนเธ�เธฅเธทเธญเธ�
+		Log.d(TAG, "tab pos " + tab.getPosition()); // keep log when tap
 
-		viewPager.setCurrentItem(tab.getPosition());// เธ�เธ”เน�เธ—เน�เธ�เน€เน€เธฅเน�เธงเน€เธญเธฒPagerเธกเธฒเน�เธชเธ”เธ�เธ•เธฒเธกเธ�เธฒเธฃเธ�เธ”Tab
+		viewPager.setCurrentItem(tab.getPosition());
 	}
 
 	@Override
