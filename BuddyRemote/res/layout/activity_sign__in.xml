@@ -1,0 +1,74 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_ui"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.KengKamon.ebuddy.LogInActivity" >
+
+    <Button
+        android:id="@+id/Signin"
+        android:layout_width="225dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="295dp"
+        android:background="@drawable/signin_button"
+        android:onClick="doRemote" />
+
+    <EditText
+        android:id="@+id/UserName"
+         android:layout_width="205dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="193dp"
+        android:background="@drawable/button"
+        android:ems="10"
+        android:hint="UserName"
+        android:textSize="13dp" 
+        android:drawableLeft="@drawable/user"
+         >
+
+        <requestFocus />
+    </EditText>
+<EditText
+        android:id="@+id/editText2"
+        android:layout_width="205dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="242dp"
+        android:background="@drawable/button"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="numberPassword"
+        android:textSize="13dp" 
+        android:drawableLeft="@drawable/pass"/>
+
+    <Button
+        android:id="@+id/ForgetPass"
+        android:layout_width="225dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="340dp"
+        android:background="@drawable/button"
+        android:text="Forgot Password?"
+        android:textColor="#f4734f"
+        android:textStyle="bold" 
+        android:onClick="doRegister"/>
+
+<TextView
+    android:id="@+id/textView2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+        android:text="Sign up now!" 
+    android:layout_gravity="center_horizontal"
+        android:layout_marginTop="380dp"
+        android:textColor="#b7b7b7"
+        android:textSize="10dp"
+     
+android:layout_marginLeft="100dp"    
+    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</FrameLayout>
