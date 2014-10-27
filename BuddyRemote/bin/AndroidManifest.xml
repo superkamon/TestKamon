@@ -39,6 +39,10 @@
             android:name=".Register_Activity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".ForgetPass_Activity"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>
