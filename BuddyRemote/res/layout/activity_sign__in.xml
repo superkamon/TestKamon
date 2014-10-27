@@ -20,31 +20,31 @@
 
     <EditText
         android:id="@+id/UserName"
-         android:layout_width="205dp"
+        android:layout_width="205dp"
         android:layout_height="30dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="193dp"
         android:background="@drawable/button"
+        android:drawableLeft="@drawable/user"
         android:ems="10"
         android:hint="UserName"
-        android:textSize="13dp" 
-        android:drawableLeft="@drawable/user"
-         >
+        android:textSize="13dp" >
 
         <requestFocus />
     </EditText>
-<EditText
+
+    <EditText
         android:id="@+id/editText2"
         android:layout_width="205dp"
         android:layout_height="30dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="242dp"
         android:background="@drawable/button"
+        android:drawableLeft="@drawable/pass"
         android:ems="10"
         android:hint="Password"
         android:inputType="numberPassword"
-        android:textSize="13dp" 
-        android:drawableLeft="@drawable/pass"/>
+        android:textSize="13dp" />
 
     <Button
         android:id="@+id/ForgetPass"
@@ -53,22 +53,23 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="340dp"
         android:background="@drawable/button"
+        android:onClick="doForget"
         android:text="Forgot Password?"
         android:textColor="#f4734f"
-        android:textStyle="bold" 
-        android:onClick="doRegister"/>
+        android:textStyle="bold" />
 
-<TextView
-    android:id="@+id/textView2"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-        android:text="Sign up now!" 
-    android:layout_gravity="center_horizontal"
-        android:layout_marginTop="380dp"
-        android:textColor="#b7b7b7"
-        android:textSize="10dp"
-     
-android:layout_marginLeft="100dp"    
-    android:textAppearance="?android:attr/textAppearanceSmall" />
+    <Button
+        android:id="@+id/SignUp"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="370dp"
+        android:background="@drawable/button"
+        android:onClick="doRegister"
+        android:text="Sign up now!"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#3b92d1"
+        android:textSize="10dp" />
 
 </FrameLayout>
