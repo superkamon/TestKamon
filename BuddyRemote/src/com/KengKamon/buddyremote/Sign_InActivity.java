@@ -11,19 +11,24 @@ public class Sign_InActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sign__in);
-		
-		
+
 	}
 
 	public void doRemote(View v) {
 		Intent itn = new Intent(this, Main.class);
 		startActivity(itn);
 	}
-	
+
 	public void doRegister(View v) {
-		
+
 		Intent itn = new Intent(this, Register_Activity.class);
 		startActivity(itn);
 	}
-}
 
+	public void doForget(View v) {
+
+		Intent itn = new Intent(this, ForgetPass_Activity.class);
+		startActivity(itn);
+	}
+	
+}

@@ -5,8 +5,8 @@
     android:background="#7ac6ce" >
 
     <FrameLayout
-        android:layout_width="240dp"
-        android:layout_height="260dp"
+        android:layout_width="260dp"
+        android:layout_height="320dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:background="#ffffff" >
@@ -19,7 +19,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold" 
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="40dp"/>
 
         <TextView
             android:id="@+id/textView2"
@@ -30,28 +30,37 @@
             android:textColor="#909194"
              android:layout_gravity="center_horizontal"
             android:textSize="12dp" 
-             android:layout_marginTop="50dp"/>
+             android:layout_marginTop="80dp"/>
 
         <EditText
             android:id="@+id/editText1"
-            android:layout_width="190dp"
-            android:layout_height="wrap_content"
+            android:layout_width="188dp"
+            android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/button_bg"
             android:ems="10"
-            android:inputType="textEmailAddress" >
+            android:inputType="textEmailAddress" 
+            android:drawablePadding="3dp"
+            android:hint="Email"
+            android:textSize="13dp"
+            
+         
+                   android:drawableLeft="@drawable/mail">
+            
 
             <requestFocus />
         </EditText>
 
         <Button
             android:id="@+id/button1"
-            android:layout_width="50dp"
+            android:layout_width="130dp"
             android:layout_height="30dp"
-            android:text="Send" 
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="130dp"
-            android:textSize="10dp"/>
+            android:layout_marginTop="170dp"
+            android:background="@drawable/send_me_button"
+          
+            android:textSize="10dp" />
 
         <TextView
             android:id="@+id/textView3"
@@ -59,7 +68,7 @@
             android:layout_height="wrap_content"
             android:text="_________________________________" 
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="210dp"
             android:textColor="#d5d8dc"/>
 
         <TextView
@@ -70,7 +79,20 @@
             android:textColor="#909194"
              android:layout_gravity="center_horizontal"
             android:textSize="12dp"
-             android:layout_marginTop="185dp" />
+             android:layout_marginTop="240dp" />
+        <Button
+        android:id="@+id/SignIn"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center_horizontal"
+
+        android:layout_marginTop="260dp"
+        android:background="@drawable/button"
+        android:onClick="doSignIn"
+        android:text="Sign in now!"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#5e50c2"
+               android:textSize="12dp" />
 
     </FrameLayout>
 
