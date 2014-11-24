@@ -11,12 +11,14 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-//เอาใว้ดูlogตำแหน่งที่ถูกลือก
+//เน€เธญเธฒเน�เธงเน�เธ”เธนlogเธ•เธณเน�เธซเธ�เน�เธ�เธ—เธตเน�เธ–เธนเธ�เธฅเธทเธญเธ�
 
-public class NumRemoteFragment extends Fragment { // Error ตรงfragment
-	// แก้เป็นActivityเเล้วจะหาย
+public class NumRemoteFragment extends Fragment { // use fragment not activity
 
 	Button button1;
+	Button btn_mute;
+	Button volup_btn;
+	Button voldown_btn;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -26,22 +28,72 @@ public class NumRemoteFragment extends Fragment { // Error ตรงfragment
 		// PowerButton
 		button1 = (Button) view.findViewById(R.id.button1);
 		button1.setOnClickListener(new OnClickListener() {
-			//เล่นเพลงบนปุ่มpow
+
 			public void onClick(View v) {
 				MediaPlayer mpEffect = MediaPlayer.create(getActivity(),
 						R.raw.power);
 				mpEffect.start();
-				//รอจับเพลงว่าเล่นจบยัง เพื่อรอเคลียบัฟเฟอร์
 				mpEffect.setOnCompletionListener(new OnCompletionListener() {
-				    public void onCompletion(MediaPlayer mp) {
-				    	 mp.release();
+					public void onCompletion(MediaPlayer mp) {
+						mp.release();
 
-				    }
+					}
 				});
 
 			}
 		});
 
+		// Mute_BTN
+		btn_mute = (Button) view.findViewById(R.id.btn_mute);
+		btn_mute.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				MediaPlayer mpEffect = MediaPlayer.create(getActivity(),
+						R.raw.mute);
+				mpEffect.start();
+				mpEffect.setOnCompletionListener(new OnCompletionListener() {
+					public void onCompletion(MediaPlayer mp) {
+						mp.release();
+
+					}
+				});
+
+			}
+		});
+		// volup_btn
+		volup_btn = (Button) view.findViewById(R.id.volup_btn);
+		volup_btn.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				MediaPlayer mpEffect = MediaPlayer.create(getActivity(),
+						R.raw.volume_up);
+				mpEffect.start();
+				mpEffect.setOnCompletionListener(new OnCompletionListener() {
+					public void onCompletion(MediaPlayer mp) {
+						mp.release();
+
+					}
+				});
+
+			}
+		});
+		// voldown_btn
+		voldown_btn = (Button) view.findViewById(R.id.voldown_btn);
+		voldown_btn.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				MediaPlayer mpEffect = MediaPlayer.create(getActivity(),
+						R.raw.volume_down);
+				mpEffect.start();
+				mpEffect.setOnCompletionListener(new OnCompletionListener() {
+					public void onCompletion(MediaPlayer mp) {
+						mp.release();
+
+					}
+				});
+
+			}
+		});
 		return view;
 	}
 
