@@ -51,12 +51,9 @@ public class LogIn_Activity extends Activity {
 	        Signin = (Button) findViewById(R.id.Signin);
 	        
 	    // Login Activity
-	        Signin.setOnClickListener(new View.OnClickListener() {
-	            
-	            public void onClick(View v) {
-	            	
-	            	  checkLogin();
-	            	  
+	        Signin.setOnClickListener(new View.OnClickListener() {	            
+	            public void onClick(View v) {	            	
+	            	  checkLogin();	            	  
 	            }
 	        });
 		}	
