@@ -12,7 +12,7 @@ public class ForgetPass_Activity extends Activity{
 		setContentView(R.layout.forget_pass);
 	}
 	public void doSignIn(View v) {
-		Intent itn = new Intent(this, Sign_InActivity.class);
+		Intent itn = new Intent(this, LogIn_Activity.class);
 		startActivity(itn);
 	}
 

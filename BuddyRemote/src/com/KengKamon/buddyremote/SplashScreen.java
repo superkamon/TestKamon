@@ -27,7 +27,7 @@ public class SplashScreen extends Activity {
                     // do nothing
                 } finally {
                     finish();
-    				Intent goMain = new Intent(getApplicationContext(), Sign_InActivity.class);
+    				Intent goMain = new Intent(getApplicationContext(), LogIn_Activity.class);
     				startActivity(goMain);
                 }
             }

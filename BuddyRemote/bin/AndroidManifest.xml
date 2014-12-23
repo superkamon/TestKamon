@@ -23,26 +23,34 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Sign_InActivity"
+            android:name=".LogIn_Activity"
             android:label="@string/app_name" >
         </activity>
         
+        <!--  Login Activity -->
         <activity
             android:name=".Main"
-            android:label="@string/title_activity_num_remote"
-            android:parentActivityName=".Sign_InActivity" >
+            android:label="Login Account"
+            android:parentActivityName=".LogIn_Activity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.KengKamon.buddyremote.Sign_InActivity" />
         </activity>
+        
+        <!--  Register Activity -->
         <activity
             android:name=".Register_Activity"
-            android:label="@string/app_name" >
+            android:label="Register New Account" >
         </activity>
+        
+        <!--  ForgetPass Activity -->
         <activity
             android:name=".ForgetPass_Activity"
             android:label="@string/app_name" >
         </activity>
     </application>
-
+    
+ 	<!-- Allow to connect with internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    
 </manifest>

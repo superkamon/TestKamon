@@ -6,5 +6,9 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_num_remote">NumRemote</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="login_error_message">Username or Password is incorrect.</string>
+	<string name="password_confirm_title">Confirm Password</string>
+	<string name="register_error_message">Register failed, Try again!</string>
+	<string name="register_success">Register Successful</string>
+	<string name="register_password_error">UserName or Password is null</string>
 </resources>
