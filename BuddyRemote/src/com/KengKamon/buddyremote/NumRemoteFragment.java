@@ -62,21 +62,7 @@ public class NumRemoteFragment extends Fragment { // use fragment not activity
 					
 					}
 				});
-			//==============================================================
-			//edit time collect 
-				
-		/*		// Current Date
-				Calendar c = Calendar.getInstance();
-				SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-				String formattedDate = df.format(c.getTime());
-
-		        // txtResult
-		        TextView result = (TextView)view.findViewById(R.id.txtResult);
-				txtResult.setText(" Current : " + formattedDate);
-			                       
-		       
-		       */
-		      //========================================================
+			
 			}
 						
 		});

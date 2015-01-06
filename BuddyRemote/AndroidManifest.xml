@@ -3,6 +3,9 @@
     package="com.KengKamon.buddyremote"
     android:versionCode="1"
     android:versionName="1.0" >
+    
+    <!-- Allow to connect with internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -30,7 +33,7 @@
         <!--  Login Activity -->
         <activity
             android:name=".Main"
-            android:label="Login Account"
+            android:label="Buddy Remote"
             android:parentActivityName=".LogIn_Activity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -46,11 +49,15 @@
         <!--  ForgetPass Activity -->
         <activity
             android:name=".ForgetPass_Activity"
+            android:label="Forget Your Pass" >
+        </activity>
+        <!--  Logout Activity -->
+        <activity
+            android:name=".LogOutFragment"
             android:label="@string/app_name" >
         </activity>
     </application>
     
- 	<!-- Allow to connect with internet -->
-    <uses-permission android:name="android.permission.INTERNET" />
+ 	
     
 </manifest>

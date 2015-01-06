@@ -21,6 +21,8 @@ public class TabsPagerAdapter  extends FragmentPagerAdapter {
 	        case 1:
 	            // Games fragment activity
 	            return new PadFragment();
+	        case 2:
+	        	return new LogOutFragment();
 	       
 	        }
 	        return null;
@@ -32,6 +34,6 @@ public class TabsPagerAdapter  extends FragmentPagerAdapter {
 		@Override
 		public int getCount() {
 			// TODO Auto-generated method stub
-			return 2;
+			return 3;
 		}
 }

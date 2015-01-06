@@ -24,8 +24,7 @@ public class Main extends FragmentActivity implements TabListener {
 	private TabsPagerAdapter mAdapter;
 	private ActionBar actionBar;
 
-	// Tab titles
-	// private String[] tabs = { "Num", "Pad" };
+	
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -52,6 +51,10 @@ public class Main extends FragmentActivity implements TabListener {
 
 		actionBar.addTab(actionBar.newTab().setText("Pad") //create pad tap
 															
+				.setTabListener(this));
+		
+		actionBar.addTab(actionBar.newTab().setText("About") //create About                              k  tap
+				
 				.setTabListener(this));
 
 		viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
