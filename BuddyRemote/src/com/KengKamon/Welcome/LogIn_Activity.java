@@ -49,7 +49,7 @@ public class LogIn_Activity extends Activity {
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 
 		StrictMode.setThreadPolicy(policy); 
-		
+	
 
 		 
 		// Importing all assets like buttons, text fields
@@ -71,6 +71,7 @@ public class LogIn_Activity extends Activity {
 	    private void checkLogin() {
 	        String email = inputEmail.getText().toString();
 	        String password = inputPassword.getText().toString();
+	        //สร้าง user function สำหรับ log in ไปที่ server แล้วจะได้ json กลับมา
 	        UserFunctions userFunction = new UserFunctions();
             JSONObject json = userFunction.loginUser(email, password);
             
@@ -78,15 +79,16 @@ public class LogIn_Activity extends Activity {
             try {
                 if (json.getString(KEY_SUCCESS) != null) {
                 	//Toast.makeText(this,"",Toast.LENGTH_SHORT).show();
-                    String res = json.getString(KEY_SUCCESS); 
-                    if(Integer.parseInt(res) == 1){
+                    String res = json.getString(KEY_SUCCESS); //อ่าน key success ออกมาดูซิว่า
+                    if(Integer.parseInt(res) == 1){// มันเท่ากับ 1 หรือป่าว(ถ้าสำเร็จมันจะส่ง 1 กลับมา)
                         // user successfully logged in
                         // Store user details in SQLite Database
-                        DatabaseHandler db = new DatabaseHandler(getApplicationContext());
-                        JSONObject json_user = json.getJSONObject("user");
+                        DatabaseHandler db = new DatabaseHandler(getApplicationContext()); //ตัวจัดการ database
+                        JSONObject json_user = json.getJSONObject("user"); // อ่าน user ออกมาจะได้ json object กลับมา
                          
                         // Clear all previous data in database
                         userFunction.logoutUser(getApplicationContext());
+                        // ทีนี้ก็อ่าน value ผ่าน key ที่อยู่ใน json object ที่ชื่อ user ได้ 
                         db.addUser(json_user.getString(KEY_NAME), json_user.getString(KEY_EMAIL), json.getString(KEY_UID), json_user.getString(KEY_CREATED_AT));                        
                          
                         // Launch Dashboard Screen
@@ -101,11 +103,12 @@ public class LogIn_Activity extends Activity {
                     }else{
                         // Error in login
                     	Toast.makeText(this,"Incorrect username/password",Toast.LENGTH_LONG).show();
+                    	inputPassword.setText("");
                     	
                     }
                 }
             } catch (JSONException e) {
-                e.printStackTrace();
+                e.printStackTrace();// ถ้ามีข้อผิดพลาดเกี่ยวกับ json เกิดขึ้นอย่าเด้งนะ ให้แสดงข้อผิดพลาดออกมาดู (อันนี้พี่บอกคอม)
             }
         }
     

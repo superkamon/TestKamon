@@ -30,7 +30,7 @@ public class JSONParser {
  
     }
  
-    public JSONObject getJSONFromUrl(String url, List<NameValuePair> params) {
+	public JSONObject getJSONFromUrl(String url, List<NameValuePair> params) {
  
         // Making HTTP request
         try {
@@ -61,7 +61,7 @@ public class JSONParser {
             }
             is.close();
             json = sb.toString();
-            Log.e("JSON", json);
+            Log.e("JSON", json); // สั่งให้ log แสดง json ที่ได้กลับมาออกมาดู
         } catch (Exception e) {
             Log.e("Buffer Error", "Error converting result " + e.toString());
         }
@@ -73,7 +73,7 @@ public class JSONParser {
             Log.e("JSON Parser", "Error parsing data " + e.toString());
         }
  
-        // return JSON String
+        // return JSON object
         return jObj;
  
     }

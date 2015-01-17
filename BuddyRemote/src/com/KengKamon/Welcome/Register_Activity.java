@@ -88,6 +88,11 @@ public class Register_Activity extends Activity {
                         }else{
                             // Error in registration
                         	Toast.makeText(Register_Activity.this,"Error occured in registration",Toast.LENGTH_LONG).show();
+                        	inputUserName.setText("");
+                        	inputPassword.setText("");
+                        	inputEmail.setText("");
+                        	
+                        	
                         }
                     }
                 } catch (JSONException e) {
