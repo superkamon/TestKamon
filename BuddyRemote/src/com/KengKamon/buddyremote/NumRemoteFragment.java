@@ -27,9 +27,11 @@ import android.os.Vibrator;
 
 public class NumRemoteFragment extends Fragment { // use fragment not activity
 
-	Button button1, btn_mute, volup_btn, voldown_btn, chup_btn, chdown_btn;
+	Button button1, btn_mute, volup_btn, voldown_btn, chup_btn, chdown_btn,
+			button2;
 	String result;
 	TextView txtResult;
+	EditText editText1;
 	int Ch = 1; // ตอนนี้ set ให้เป็น 1 อนาคต ให้ user กด ปุ่ม เมื่อ tv เปิด
 	// อยู่ที่ช่อง 1 เเลว้ให้มัน set Ch = 1 เเล้วไปดู ใน life cycle
 	// ได้มันจะทำให้เก็บค่า Ch ปัจจุบัน แม้ปิด TV
@@ -41,11 +43,31 @@ public class NumRemoteFragment extends Fragment { // use fragment not activity
 			Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.fragment_num_remote, container, false);
 
+		// editText choose Channal
+		editText1 = (EditText) view.findViewById(R.id.editText1);
+		button2 = (Button) view.findViewById(R.id.button2);
+		button2.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				
+				Vibrator vi = (Vibrator) getActivity().getSystemService(
+						Context.VIBRATOR_SERVICE);
+				// Vibrate for 500 milliseconds
+				vi.vibrate(50);
+				changechanal();
+				editText1.setText("");
+			}
+
+		});
+
 		// PowerButton
 		button1 = (Button) view.findViewById(R.id.button1);
 		button1.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
+				Vibrator vi = (Vibrator) getActivity().getSystemService(
+						Context.VIBRATOR_SERVICE);
+				// Vibrate for 500 milliseconds
+				vi.vibrate(50);
 				MediaPlayer mpEffect = MediaPlayer.create(getActivity(),
 						R.raw.power);
 				mpEffect.start();
@@ -64,6 +86,10 @@ public class NumRemoteFragment extends Fragment { // use fragment not activity
 		btn_mute.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
+				Vibrator vi = (Vibrator) getActivity().getSystemService(
+						Context.VIBRATOR_SERVICE);
+				// Vibrate for 500 milliseconds
+				vi.vibrate(50);
 				MediaPlayer mpEffect = MediaPlayer.create(getActivity(),
 						R.raw.mute);
 				mpEffect.start();
@@ -82,6 +108,10 @@ public class NumRemoteFragment extends Fragment { // use fragment not activity
 		volup_btn.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
+				Vibrator vi = (Vibrator) getActivity().getSystemService(
+						Context.VIBRATOR_SERVICE);
+				// Vibrate for 500 milliseconds
+				vi.vibrate(50);
 				MediaPlayer mpEffect = MediaPlayer.create(getActivity(),
 						R.raw.volume_up);
 				mpEffect.start();
@@ -99,6 +129,10 @@ public class NumRemoteFragment extends Fragment { // use fragment not activity
 		voldown_btn.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
+				Vibrator vi = (Vibrator) getActivity().getSystemService(
+						Context.VIBRATOR_SERVICE);
+				// Vibrate for 500 milliseconds
+				vi.vibrate(50);
 				MediaPlayer mpEffect = MediaPlayer.create(getActivity(),
 						R.raw.volume_down);
 				mpEffect.start();
@@ -171,6 +205,18 @@ public class NumRemoteFragment extends Fragment { // use fragment not activity
 		});
 
 		return view;
+	}
+
+	/**
+	 * =========================================================================
+	 * ================== Change Chanal by EditTexT ============================
+	 * ========================================================================
+	 */
+	public void changechanal() {
+		String chanal = editText1.getText().toString();
+		Ch = Integer.parseInt(chanal);
+		SaveDataToLog();
+
 	}
 
 	/**

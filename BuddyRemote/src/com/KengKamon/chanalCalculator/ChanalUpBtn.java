@@ -11,10 +11,10 @@ public class ChanalUpBtn {
 
 		switch (Ch) {
 		case 1:
-			formattedChanal = "ช่อง 5";
+			formattedChanal = "CH 5";
 			break;
 		case 2:
-			formattedChanal = "ช่อง สทท.";
+			formattedChanal = "NBT";
 			break;
 		case 3:
 			formattedChanal = "Thai PBS";
@@ -47,7 +47,7 @@ public class ChanalUpBtn {
 			formattedChanal = "null";
 			break;
 		case 13:
-			formattedChanal = "ช่อง 3 FAMILY";
+			formattedChanal = "CH 3 FAMILY";
 			break;
 		case 14:
 			formattedChanal = "MCOT";
@@ -89,10 +89,10 @@ public class ChanalUpBtn {
 			formattedChanal = "Now26";
 			break;
 		case 27:
-			formattedChanal = "ช่อง 8";
+			formattedChanal = "CH 8";
 			break;
 		case 28:
-			formattedChanal = "ช่อง 3 SD";
+			formattedChanal = "CH 3 SD";
 			break;
 		case 29:
 			formattedChanal = "MONO 29";
@@ -107,19 +107,19 @@ public class ChanalUpBtn {
 			formattedChanal = "Thairat";
 			break;
 		case 33:
-			formattedChanal = "ช่อง 3 HD";
+			formattedChanal = "CH 3 HD";
 			break;
 		case 34:
 			formattedChanal = "AMARIN TV HD";
 			break;
 		case 35:
-			formattedChanal = "ช่อง 7 HD";
+			formattedChanal = "CH 7 HD";
 			break;
 		case 36:
 			formattedChanal = "PPTV HD";
 			break;
 		default:
-			Ch = 1 ;  // กลับมาเริ่มที่ช่อง 1
+			formattedChanal = "null" ;  // กลับมาเริ่มที่ช่อง 1
 			break;
 
 		}

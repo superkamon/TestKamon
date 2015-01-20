@@ -159,5 +159,12 @@ public class MyDB extends SQLiteOpenHelper {
 		
 		
 	}
+	
+	 public void resetTables(){
+	        SQLiteDatabase db = this.getWritableDatabase();
+	        // Delete All Rows
+	        db.delete(TABLE_LOG, null, null);
+	        db.close();
+	    }
 
 }

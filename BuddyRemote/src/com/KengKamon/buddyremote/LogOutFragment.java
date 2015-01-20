@@ -4,6 +4,8 @@ import java.util.HashMap;
 
 import com.KengKamon.Welcome.LogIn_Activity;
 import com.KengKamon.library.DatabaseHandler;
+import com.KengKamon.library.DeleteLogAfterSent;
+import com.KengKamon.library.MyDB;
 import com.KengKamon.library.UserFunctions;
 import com.KengKamon.buddyremote.SentLogToDatabase;
 
@@ -24,8 +26,9 @@ public class LogOutFragment extends Fragment {
 	EditText inputEmail;
 	// HashMap<String, String> User;
 	Button Showlog;
-	SentLogToDatabase sentLog;
+	DeleteLogAfterSent delLog;
 	Button SentLog;
+	
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,14 +61,16 @@ public class LogOutFragment extends Fragment {
 
 		btnLogout.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
-
+						
 				userFunctions.logoutUser(getActivity());
 				UserID.setText("");
 				Intent login = new Intent(
+						
 						getActivity().getApplicationContext(),
 						LogIn_Activity.class);
 				login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(login);
+				
 			}
 		});
 		// ShowLog Btn
@@ -82,9 +87,9 @@ public class LogOutFragment extends Fragment {
 		SentLog.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				SentLogToDatabase sent = new SentLogToDatabase(getActivity());
-				sent.getDataFromLoginSQLite();
-
+				delLog= new DeleteLogAfterSent(getActivity());
+				delLog.execute();
+								
 			}
 		});
 

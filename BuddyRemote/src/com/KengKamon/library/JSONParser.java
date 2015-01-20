@@ -65,6 +65,8 @@ public class JSONParser {
         } catch (Exception e) {
             Log.e("Buffer Error", "Error converting result " + e.toString());
         }
+        
+        Log.d("JSON", "json when sent to server :" + json);
  
         // try parse the string to a JSON object
         try {
