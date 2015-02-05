@@ -5,16 +5,19 @@ import java.util.Calendar;
 import java.util.HashMap;
 
 import com.KengKamon.chanalCalculator.ChanalUpBtn;
+import com.KengKamon.chanalCalculator.ChangeCH;
 import com.KengKamon.library.DatabaseHandler;
 import com.KengKamon.library.MyDB;
 
 import android.support.v4.app.Fragment;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -32,17 +35,32 @@ public class NumRemoteFragment extends Fragment { // use fragment not activity
 	String result;
 	TextView txtResult;
 	EditText editText1;
-	int Ch = 1; // ตอนนี้ set ให้เป็น 1 อนาคต ให้ user กด ปุ่ม เมื่อ tv เปิด
+	int Ch =1 ; // ตอนนี้ set ให้เป็น 1 อนาคต ให้ user กด ปุ่ม เมื่อ tv เปิด
 	// อยู่ที่ช่อง 1 เเลว้ให้มัน set Ch = 1 เเล้วไปดู ใน life cycle
 	// ได้มันจะทำให้เก็บค่า Ch ปัจจุบัน แม้ปิด TV
 	String formattedChanal;
 	View view;
-
+	ChangeCH ChangeCh;
+	String chanal ;
+	SharedPreferences sp;
+	SharedPreferences.Editor editor;
+	
+	final String PREFNAME = "SamplePreferences";
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.fragment_num_remote, container, false);
 
+		//SharedPreferences sp = getActivity().getSharedPreferences(PREFNAME, Context.MODE_PRIVATE);
+	    //SharedPreferences.Editor editor = sp.edit();
+		
+		sp = getActivity().getSharedPreferences(PREFNAME, Context.MODE_PRIVATE);
+	    editor = sp.edit();
+		
+		Ch = sp.getInt("My_Value", 1);
+		Log.d("", "value of Ch "+ Ch);
+		
 		// editText choose Channal
 		editText1 = (EditText) view.findViewById(R.id.editText1);
 		button2 = (Button) view.findViewById(R.id.button2);
@@ -54,6 +72,7 @@ public class NumRemoteFragment extends Fragment { // use fragment not activity
 				// Vibrate for 500 milliseconds
 				vi.vibrate(50);
 				changechanal();
+				
 				editText1.setText("");
 			}
 
@@ -213,10 +232,13 @@ public class NumRemoteFragment extends Fragment { // use fragment not activity
 	 * ========================================================================
 	 */
 	public void changechanal() {
-		String chanal = editText1.getText().toString();
+		chanal = editText1.getText().toString();
 		Ch = Integer.parseInt(chanal);
+		//Check log
+		Log.d("Value Ch",  String.valueOf(Ch));
 		SaveDataToLog();
-
+		ChangeCH changeCH = new ChangeCH(getActivity());
+		changeCH.checkChanal(Ch);
 	}
 
 	/**
@@ -228,8 +250,6 @@ public class NumRemoteFragment extends Fragment { // use fragment not activity
 		// checkChanal
 		String FormattedChanal = ChanalUpBtn.checkChanalUp(Ch);
 
-		// final EditText tMemberID = (EditText)
-		// view.findViewById(R.id.editText1);
 		// Dialog
 		final AlertDialog.Builder adb = new AlertDialog.Builder(getActivity());
 		AlertDialog ad = adb.create();
@@ -261,5 +281,19 @@ public class NumRemoteFragment extends Fragment { // use fragment not activity
 		// "Add Data Successfully. ",Toast.LENGTH_SHORT).show();
 		return true;
 	}
+
+	@Override
+	public void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		
+		 sp = getActivity().getSharedPreferences(PREFNAME, Context.MODE_PRIVATE);
+	     editor = sp.edit();
+	    
+		editor.putInt("My_Value", Ch);
+		editor.commit();
+		Log.d("","value of CH = " + Ch );
+	}
+	
 
 }

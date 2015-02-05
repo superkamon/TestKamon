@@ -10,6 +10,7 @@ import com.KengKamon.library.UserFunctions;
 import com.KengKamon.buddyremote.SentLogToDatabase;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.widget.Button;
@@ -28,7 +29,7 @@ public class LogOutFragment extends Fragment {
 	Button Showlog;
 	DeleteLogAfterSent delLog;
 	Button SentLog;
-	
+
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -95,5 +96,24 @@ public class LogOutFragment extends Fragment {
 
 		return rootview;
 	}
+
+
+	@Override
+	public void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		delLog= new DeleteLogAfterSent(getActivity());
+		delLog.execute();
+		
+		
+	
+		
+		
+		
+		
+	}
+	
+	
+	
 
 }
