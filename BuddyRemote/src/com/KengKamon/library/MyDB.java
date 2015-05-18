@@ -142,7 +142,8 @@ public class MyDB extends SQLiteOpenHelper {
 				 	        	map.put("ID", cursor.getString(cursor.getColumnIndex("ID")));
 					 	        map.put("Date", cursor.getString(cursor.getColumnIndex("Date")));
 					 	        map.put("Time", cursor.getString(cursor.getColumnIndex("Time")));
-					 	        map.put("Chanal", cursor.getString(cursor.getColumnIndex("Chanal")));
+					 	        map.put("Chanal", cursor.getString(cursor.getColumnIndex("Chanal"))); 
+					 	      
 					 	        MyArrList.add(map);
 				 	        } while (cursor.moveToNext());
 				 	    }

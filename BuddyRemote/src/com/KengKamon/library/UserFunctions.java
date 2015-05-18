@@ -8,6 +8,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
  
 import android.content.Context;
+import android.util.Log;
  
 /** 
  *======================================================================= 
@@ -24,8 +25,8 @@ public class UserFunctions {
     
     // Testing in localhost using  xampp 
     // use http://10.0.2.2/ to connect to your localhost ie http://localhost/
-    private static String loginURL = "http://webserv.kmitl.ac.th/s4010026/Buddy/android_login_api/";//มันจะเรียกไป index.php 
-    private static String registerURL = "http://webserv.kmitl.ac.th/s4010026/Buddy/android_login_api/";
+    private static String loginURL = "http://iteproject.kmi.tl/Ebuddy/Buddy/android_login_api/";//มันจะเรียกไป index.php 
+    private static String registerURL = "http://iteproject.kmi.tl/Ebuddy/Buddy/android_login_api/";
      
     private static String login_tag = "login";
     private static String register_tag = "register";
@@ -71,6 +72,7 @@ public class UserFunctions {
          
         // getting JSON Object                      
         JSONObject json = jsonParser.getJSONFromUrl(registerURL, params);
+        
         // return json
         return json;
     }

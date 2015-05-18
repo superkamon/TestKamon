@@ -161,7 +161,7 @@
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignLeft="@+id/button11"
         android:layout_marginLeft="23dp"
-        android:text="Exit"
+        android:text="Input"
         android:textStyle="bold" />
 
     <TextView

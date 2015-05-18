@@ -24,6 +24,7 @@ import com.KengKamon.buddyremote.Main;
 import com.KengKamon.buddyremote.R;
 import com.KengKamon.library.DatabaseHandler;
 import com.KengKamon.library.UserFunctions;
+//import com.KengKamon.sentMail1.SendMailActivity;
 
 public class LogIn_Activity extends Activity {
 
@@ -39,10 +40,10 @@ public class LogIn_Activity extends Activity {
 	private static String KEY_SUCCESS = "success";
 	private static String KEY_ERROR = "error";
 	private static String KEY_ERROR_MSG = "error_msg";
-	private static String KEY_UID = "uid";
+	//private static String KEY_UID = "uid";
 	private static String KEY_NAME = "name";
 	private static String KEY_EMAIL = "email";
-	private static String KEY_CREATED_AT = "created_at";
+	//private static String KEY_CREATED_AT = "created_at";
 
 	// Shared Preference Parameter
 	final String PREFNAME = "SamplePreferences";
@@ -57,7 +58,7 @@ public class LogIn_Activity extends Activity {
 				.permitAll().build();
 		StrictMode.setThreadPolicy(policy);
 		
-		//Initial Shared Preference
+		//Initial Shared Preference for remember user id
 		sp = getSharedPreferences(PREFNAME, Context.MODE_PRIVATE);
 	    editor = sp.edit();		
 
@@ -121,9 +122,10 @@ public class LogIn_Activity extends Activity {
 					// ทีนี้ก็อ่าน value ผ่าน key ที่อยู่ใน json object ที่ชื่อ
 					// user ได้
 					db.addUser(json_user.getString(KEY_NAME),
-							json_user.getString(KEY_EMAIL),
-							json.getString(KEY_UID),
-							json_user.getString(KEY_CREATED_AT));
+							json_user.getString(KEY_EMAIL)//,
+							//json.getString(KEY_UID)
+							//json_user.getString(KEY_CREATED_AT)
+							);
 
 					// Launch Dashboard Screen
 					Intent dashboard = new Intent(getApplicationContext(),

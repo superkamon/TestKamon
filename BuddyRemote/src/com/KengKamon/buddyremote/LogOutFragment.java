@@ -26,9 +26,9 @@ public class LogOutFragment extends Fragment {
 	TextView UserID;
 	EditText inputEmail;
 	// HashMap<String, String> User;
-	Button Showlog;
+	//Button Showlog;
 	DeleteLogAfterSent delLog;
-	Button SentLog;
+	//Button SentLog;
 
 
 	@Override
@@ -65,8 +65,7 @@ public class LogOutFragment extends Fragment {
 						
 				userFunctions.logoutUser(getActivity());
 				UserID.setText("");
-				Intent login = new Intent(
-						
+				Intent login = new Intent(			
 						getActivity().getApplicationContext(),
 						LogIn_Activity.class);
 				login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -75,24 +74,24 @@ public class LogOutFragment extends Fragment {
 			}
 		});
 		// ShowLog Btn
-		Showlog = (Button) rootview.findViewById(R.id.Showlog);
-		Showlog.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View arg0) {
-				Intent Log = new Intent(getActivity().getApplicationContext(),
-						ShowActivity.class);
-				startActivity(Log);
-			}
-		});
-		// sentLog Btn
-		SentLog = (Button) rootview.findViewById(R.id.SentLog);
-		SentLog.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				delLog= new DeleteLogAfterSent(getActivity());
-				delLog.execute();
-								
-			}
-		});
+//		Showlog = (Button) rootview.findViewById(R.id.Showlog);
+//		Showlog.setOnClickListener(new View.OnClickListener() {
+//			public void onClick(View arg0) {
+//				Intent Log = new Intent(getActivity().getApplicationContext(),
+//						ShowActivity.class);
+//				startActivity(Log);
+//			}
+//		});
+//		// sentLog Btn
+//		SentLog = (Button) rootview.findViewById(R.id.SentLog);
+//		SentLog.setOnClickListener(new View.OnClickListener() {
+//			@Override
+//			public void onClick(View v) {
+//				delLog= new DeleteLogAfterSent(getActivity());
+//				delLog.execute();
+//								
+//			}
+//		});
 
 		return rootview;
 	}
